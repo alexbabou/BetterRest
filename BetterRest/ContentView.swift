@@ -16,7 +16,8 @@ struct ContentView: View {
         NavigationView {
             Form {
                 Section(header: Text("Sleep Information:")) {
-                    DatePicker("Desired wake up time:", selection: $wakeUp, displayedComponents: .hourAndMinute).font(.headline)
+                    DatePicker("Desired wake up time:", selection: $wakeUp, displayedComponents:
+                                .hourAndMinute).font(.headline)
                     HStack {
                         Text("Sleep time:")
                             .font(.headline)
@@ -53,9 +54,8 @@ struct ContentView: View {
         
         do {
             let model: SleepCalculator = try SleepCalculator(configuration: .init())
-            
-            let prediction = try model.prediction(wake: Double(hour + minute), estimatedSleep: sleepAmount, coffee: Double(coffeeAmount))
-            
+            let prediction = try model.prediction(wake: Double(hour + minute),
+                                                  estimatedSleep: sleepAmount, coffee: Double(coffeeAmount))
             let sleepTime = wakeUp - prediction.actualSleep
             
             let formatter = DateFormatter()
