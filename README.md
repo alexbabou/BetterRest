@@ -1,6 +1,4 @@
 # BetterRest
-Predict ideal bedtime using Core ML - Project 4 of Hacking with Swift
-
 In order to output your ideal bedtime, please input your desired wake up time, sleep time, 
 and coffee consumption to calculate it using the Core ML implementation.
 
